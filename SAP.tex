@@ -1,0 +1,38 @@
+
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc} 
+\usepackage[russian]{babel} 
+\usepackage{indentfirst}     
+\usepackage{amsmath,amsfonts,amssymb}  
+
+\newcommand{\done}{\begin{flushright}$\blacksquare$\end{flushright}}
+\newcommand{\stareq}{\stackrel{\bigstar}{=}}
+\begin{document}
+  
+\textbf{}
+Сумма всех членов конечной арифметической прогрессии 
+$a_1, a_2, \ldots, a_n$ через два крайних члена и число слагаемых.
+ 
+\smallskip
+
+\textbf{}
+Необходимо найти сумму: 
+$$a_1 + a_2 + \ldots + a_n.$$
+Исходя из того, что $a_i = a_1 + (i-1) d$, и что $a_{n-i} = a_n - (i-1)d$, найдём удвоенную сумму, и поделим результат пополам:
+\begin{multline*}
+(a_1 + a_2 + \ldots + a_n) + (a_1 + a_2 + \ldots + a_n)
+=
+(a_1 + a_n) + (a_2 + a_{n-1}) + \ldots + (a_n + a_1)
+= \\ = 
+(a_1 + a_n) + ((a_2 + d) + (a_n - d)) + \ldots + (a_n + a_1)
+\stareq \\ \stareq 
+\underbrace{(a_1 + a_n) + (a_1 + a_n) + \ldots + (a_1 + a_n)}_n
+= 
+n \cdot (a_1 + a_n).
+\end{multline*}
+Равенство $\stareq$ выполняется в силу того, что 
+$$a_i + a_{n-i} = a_1 + (i-1) d + a_n - (i-1)d = a_1 + a_n.$$
+Следовательно, 
+$$a_1 + a_2 + \ldots + a_n = n \cdot \dfrac{a_1 + a_n}{2}.$$
+
+\end{document}
